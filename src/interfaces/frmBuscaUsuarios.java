@@ -25,6 +25,13 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
         initComponents();
         cmbUsuarios.removeAllItems();
         ComboUsuarios();
+        btnAlterar.setVisible(false);
+        txtIdUsuario.setVisible(false);
+        txtNomeUsuario.setVisible(false);
+        txtSenhaUsuario.setVisible(false);
+        lblId.setVisible(false);
+        lblNome.setVisible(false);
+        lblSenha.setVisible(false);
     }
     
     public void closeWindow(){//método para fechar janelas
@@ -62,6 +69,13 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         cmbUsuarios = new javax.swing.JComboBox();
+        txtIdUsuario = new javax.swing.JTextField();
+        txtNomeUsuario = new javax.swing.JTextField();
+        txtSenhaUsuario = new javax.swing.JTextField();
+        lblId = new javax.swing.JLabel();
+        lblNome = new javax.swing.JLabel();
+        lblSenha = new javax.swing.JLabel();
+        btnAlterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,27 +101,52 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
 
         cmbUsuarios.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
+        lblId.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblId.setText("ID:");
+
+        lblNome.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblNome.setText("Nome:");
+
+        lblSenha.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        lblSenha.setText("Senha:");
+
+        btnAlterar.setText("Alterar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(158, 158, 158))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(134, 134, 134)
-                        .addComponent(jLabel2)
-                        .addGap(42, 42, 42)
-                        .addComponent(cmbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(81, 81, 81)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(158, 158, 158))
+                .addGap(30, 30, 30)
+                .addComponent(cmbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(104, 104, 104)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblId)
+                    .addComponent(lblNome)
+                    .addComponent(lblSenha))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtNomeUsuario)
+                    .addComponent(txtSenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,12 +156,30 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
+                    .addComponent(cmbUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblId))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNome))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtSenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSenha))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54))))
         );
 
         pack();
@@ -138,7 +195,17 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
         String nome = (String)cmbUsuarios.getSelectedItem();
         UsuarioDao uDao = new UsuarioDao();
         Usuario u = uDao.FindUserByName(nome);
-        System.out.println("id: " + u.getIdUsuario() + " nome : "+ u.getNome() + " senha: " + u.getSenha());
+        btnAlterar.setVisible(true);
+        txtIdUsuario.setVisible(true);
+        txtNomeUsuario.setVisible(true);
+        txtSenhaUsuario.setVisible(true);
+        lblId.setVisible(true);
+        lblNome.setVisible(true);
+        lblSenha.setVisible(true);
+        txtIdUsuario.setText(String.valueOf(u.getIdUsuario()));
+        txtNomeUsuario.setText(String.valueOf(u.getNome()));
+        txtSenhaUsuario.setText(String.valueOf(u.getSenha()));
+        txtIdUsuario.setEditable(false);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
@@ -178,10 +245,17 @@ public class frmBuscaUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox cmbUsuarios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblSenha;
+    private javax.swing.JTextField txtIdUsuario;
+    private javax.swing.JTextField txtNomeUsuario;
+    private javax.swing.JTextField txtSenhaUsuario;
     // End of variables declaration//GEN-END:variables
 }
