@@ -82,8 +82,9 @@ public class AdministradorDao extends GenericDao{
             stme.setString(2, senha);
             ResultSet rs = stme.executeQuery();
             if (rs.next()) {
-                String name = rs.getString("nome");
-                String pass = rs.getString("senha");  
+                Administrador ad = new Administrador();
+                ad.setNome(rs.getString("nome"));
+                ad.setSenha(rs.getString("senha"));  
                 autenticado = true;
             } else { 
                 

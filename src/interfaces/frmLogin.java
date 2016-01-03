@@ -10,6 +10,7 @@ import dao.AdministradorDao;
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 
@@ -18,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Fabio
  */
 public class frmLogin extends javax.swing.JFrame {
-
+    boolean resposta;
     /**
      * Creates new form frmLogin
      */
@@ -117,9 +118,9 @@ public class frmLogin extends javax.swing.JFrame {
             
         AdministradorDao ad = new AdministradorDao();
             
-        boolean resposta = ad.verify(nome,senha);//Pego usuario e senha digitados e jogo no metodo para validar
+        this.resposta = ad.verify(nome,senha);//Pego usuario e senha digitados e jogo no metodo para validar
         
-        if (resposta == true) {//Se Usuario e senha estiverem corretos
+        if (this.resposta == true) {//Se Usuario e senha estiverem corretos
             JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!!!");
             closeWindow();
             frmPrincipal p = new frmPrincipal();
@@ -132,12 +133,8 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
         
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER){//método que realiza ação se clicado enter dentro do campo senha
-            JOptionPane.showMessageDialog(null, "Usuário logado com sucesso!!!");
-            closeWindow();
-            frmPrincipal p = new frmPrincipal();
-            p.setVisible(true);
-        }
+        
+        
     }//GEN-LAST:event_txtSenhaKeyPressed
 
     public static void main(String args[]) {
