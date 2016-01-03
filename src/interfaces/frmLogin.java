@@ -8,9 +8,7 @@ package interfaces;
 
 import dao.AdministradorDao;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 
@@ -112,7 +110,7 @@ public class frmLogin extends javax.swing.JFrame {
         String nome = txtNome.getText();
         String senha = String.valueOf(txtSenha.getPassword());
         
-        if((nome == null)||(senha == null)){
+        if((nome.isEmpty())||(senha.isEmpty())){
         JOptionPane.showMessageDialog(null, "Campo Não Preenchido!!!");
         }else{
             
@@ -132,8 +130,7 @@ public class frmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtSenhaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSenhaKeyPressed
-        
-        
+        //validar no clique do enter preciso pesquisar.......       
         
     }//GEN-LAST:event_txtSenhaKeyPressed
 

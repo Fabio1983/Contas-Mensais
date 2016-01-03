@@ -7,6 +7,9 @@ package interfaces;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  *
@@ -19,6 +22,8 @@ public class frmPrincipal extends javax.swing.JFrame {
      */
     public frmPrincipal() {
         initComponents();
+        txtData.setEditable(false);
+        txtData.setText(new SimpleDateFormat("dd/MM/yyyy - HH:MM:ss").format(new Date(System.currentTimeMillis())));
     }
     
     public void closeWindow(){
@@ -35,6 +40,8 @@ public class frmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtData = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -44,6 +51,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel1.setText("Data:");
 
         jMenu1.setText("Cadastros");
 
@@ -81,11 +91,21 @@ public class frmPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 690, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(479, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,7 +118,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cadUsuariosActionPerformed
 
     private void edUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edUsuariosActionPerformed
-        frmEdUsuarios e = new frmEdUsuarios();
+        frmBuscaUsuarios e = new frmBuscaUsuarios();
         e.setVisible(true);
         closeWindow();
     }//GEN-LAST:event_edUsuariosActionPerformed
@@ -142,9 +162,11 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadUsuarios;
     private javax.swing.JMenuItem edUsuarios;
     private javax.swing.JMenuItem excUsuarios;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JTextField txtData;
     // End of variables declaration//GEN-END:variables
 }

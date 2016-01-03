@@ -5,9 +5,7 @@
  */
 package interfaces;
 
-import contas.Administrador;
 import contas.Usuario;
-import dao.AdministradorDao;
 import dao.UsuarioDao;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -18,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Fabio
  */
 public class frmCadUsuarios extends javax.swing.JFrame {
-    private UsuarioDao uDao = new UsuarioDao();
+    UsuarioDao uDao = new UsuarioDao();
     
     /**
      * Creates new form frmUsuarios
@@ -132,7 +130,7 @@ public class frmCadUsuarios extends javax.swing.JFrame {
         String nome = txtNome.getText();
         String senha = String.valueOf(txtSenha.getPassword());
         
-        if((nome == null)||(senha == null)){
+        if((nome.isEmpty())||(senha.isEmpty())){
         JOptionPane.showMessageDialog(null, "Campo Não Preenchido!!!");
         }else{
             //passa para a classe e acessa banco de dados para gravar

@@ -6,7 +6,6 @@
 package dao;
 
 
-import contas.Administrador;
 import contas.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,6 +46,7 @@ public class UsuarioDao extends GenericDao{
             rs.beforeFirst();
             while (rs.next()) {
                 Usuario u = new Usuario();
+                u.setIdUsuario(rs.getInt("idUsuario"));
                 u.setNome(rs.getString("nome"));
                 u.setSenha(rs.getString("senha"));
                 uList.add(u);
@@ -55,6 +55,29 @@ public class UsuarioDao extends GenericDao{
         } catch (Exception e) {
             return null;
         } 
+    }
+    
+    public Usuario FindUserByName(String nome){
+        Usuario u = new Usuario();
+        String sql = "SELECT * FROM usuarios WHERE nome = ?";
+        try{
+            this.prepareStmte(sql);
+            this.stmte.setString(1, nome);
+            ResultSet rs = this.stmte.executeQuery(); //sempre usar quando fazer uma consulta(SELECT)
+           
+            while(rs.next())
+            {
+                u.setIdUsuario(rs.getInt("idUsuario"));
+                u.setNome(rs.getString("nome"));
+                u.setSenha(rs.getString("senha"));
+                return u;
+            }
+        }
+        catch(Exception e)
+        {
+            return null;
+        }
+        return u;
     }
     
 }
